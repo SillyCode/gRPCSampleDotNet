@@ -1,4 +1,5 @@
-﻿using Grpc.Net.Client;
+﻿using Google.Protobuf.WellKnownTypes;
+using Grpc.Net.Client;
 using GrpcEmployee;
 
 //var birthdate = new DateTime(1984, 04, 13);
@@ -43,9 +44,9 @@ var reply = client.GetEmployee(employeeId);
 Console.WriteLine("GRPC Client");
 */
 
-EmployeeId employeeId1 = new EmployeeId() { Message = "1" };
-EmployeeId employeeId2 = new EmployeeId() { Message = "2" };
-EmployeeId employeeId3 = new EmployeeId() { Message = "18" };
+EmployeeId employeeId1 = new EmployeeId() { Id = 1 };
+EmployeeId employeeId2 = new EmployeeId() { Id = 2 };
+EmployeeId employeeId3 = new EmployeeId() { Id = 18 };
 
 Console.WriteLine("GRPC Client");
 using var channel = GrpcChannel.ForAddress("http://localhost:5109");

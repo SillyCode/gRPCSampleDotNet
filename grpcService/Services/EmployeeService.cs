@@ -21,15 +21,14 @@ namespace GrpcService1.Services
 
             EmployeeResponse employeeResponse = new EmployeeResponse();
             if (request != null) {
-                int id = Convert.ToInt32(request.Message);
-                employeeResponse = GetEmployee(id);
+                employeeResponse = GetEmployee(request.Id);
             }
             return Task.FromResult(employeeResponse);
         }
 
         private EmployeeResponse GetEmployee(int id)
         {
-            EmployeeResponse employee = employees.FirstOrDefault(x => x.Id == id);
+            EmployeeResponse employee = employees.First(x => x.Id == id);
 			if(employee == null) {
 				return new EmployeeResponse();
 			}
