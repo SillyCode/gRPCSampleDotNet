@@ -71,5 +71,5 @@ if (reply != null)
     Console.WriteLine("\n");
 } else
 {
-    Console.WriteLine("Received employee Data");
+    Console.WriteLine("No employee data received");
 }

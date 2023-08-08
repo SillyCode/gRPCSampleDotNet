@@ -28,7 +28,7 @@ namespace GrpcService1.Services
 
         private EmployeeResponse GetEmployee(int id)
         {
-            EmployeeResponse employee = employees.First(x => x.Id == id);
+            EmployeeResponse? employee = employees.FirstOrDefault(x => x.Id == id);
 			if(employee == null) {
 				return new EmployeeResponse();
 			}
